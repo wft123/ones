@@ -1,0 +1,174 @@
+@CHARSET "UTF-8";
+@import "main.css";
+
+html body{
+	overflow-y:hidden;
+}
+
+div .ui-content {
+	background-image: url('../img/chatback.jpg');
+	background-size: cover;
+}
+
+#menuPanel { display: inherit; }
+#videoArea { height:0; background: #000;}
+#myCam {width:100px; height:80px;position:absolute; left:0px; top:50px; cursor:pointer; cursor:hand; display:none;background: transparent; border: 2px #fff solid; }
+div>video {	height:100%;background:transparent; }
+
+#receivedChatArea {
+	width: 100%;
+	overflow: auto;
+	overflow-x: hidden;	
+    display: inline-block;
+    /*background-image: url('../img/chatback.jpg');
+    background-size: cover;
+    background-position: center;*/
+    background-color: transparent;
+    border: 1px #000 solid;
+    padding-left: 0px;
+}
+
+#receivedChatArea > div  {
+	display: flex;
+	align-items: flex-end;
+}
+
+#receivedChatArea > div.minewrap  {
+	display: flex;
+	align-items: flex-end;
+	flex-direction: row-reverse;
+}
+
+.time {
+    font-size: 9px;
+    margin: 0 0 15px 0;
+}
+ 
+#receivedChatArea li {
+    display: table;
+    white-break:normal;
+    max-width: 60%;
+    padding: 13px;
+    margin: 7px 10px;
+    font-size: 18px;
+    line-height: 25px;
+    list-style : none;
+ 
+    -webkit-border-top-left-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+    -webkit-border-bottom-left-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+    -moz-border-radius-topright: 6px;
+    -moz-border-radius-bottomright: 6px;
+    -moz-border-radius-bottomleft: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+#receivedChatArea .yours {
+    background-color: #ecf0f1;
+    max-width: 60%;
+    clear: both;
+    float: left;
+}
+ 
+#receivedChatArea .yours:after {
+    content: ' ';
+    position: relative;
+    top: auto;
+    bottom: auto;
+    border: 12px solid;
+    border-color: transparent transparent #ecf0f1 transparent;
+    margin: 0 0 0 -24px;
+    float: left;
+}
+
+#receivedChatArea .mine {
+    background-color: #C1E4EC;
+    max-width: 60%;
+    height: auto;
+    clear: both;
+    float: right;
+}
+ 
+#receivedChatArea .mine:after {
+    content: ' ';
+    position: relative;
+    bottom: auto;
+    border: 12px solid;
+    border-color: transparent transparent #C1E4EC transparent;
+    margin: 0 -24px 0 0;
+    float: right;
+}
+ 
+#receivedChatArea li span {
+    padding: 0 0 5px;
+    color: #7f8c8d;
+    display: block;
+    text-align: left;
+}
+
+#sendChatArea {
+	width: 70%;
+}
+
+#navbar {
+	text-align: right;
+}
+
+.ui-input-text {
+	position: relative;
+	z-index: 1;	
+}
+
+.ui-input-btn {
+	position: relative;
+	width: 80px;
+	top : -50px;
+	left : 10px;
+	z-index: 2;	
+}
+
+.systemwrap{background:rgba(192,192,192,0.6); color: white;}
+.systemwrap > div{display: none;}
+li.system{width:100%; text-align: center; font-style: italic; font-size:15px !important;}
+
+@media ( min-width: 35em ) {
+
+	/* wrap on wide viewports once open */
+
+	.ui-panel-page-content-open.ui-panel-page-content-position-left {
+		margin-right: 17em;
+	}
+	.ui-panel-page-content-open.ui-panel-page-content-position-right {
+		margin-left: 17em;
+	}
+	.ui-panel-page-content-open {
+		width: auto;
+	}
+
+	/* disable "dismiss" on wide viewports */
+	.ui-panel-dismiss {
+		display: none;
+	}
+
+	/* same as the above but for panels with display mode "push" only */
+
+	.ui-panel-page-content-open.ui-panel-page-content-position-left.ui-panel-page-content-display-push {
+		margin-right: 17em;
+	}
+	.ui-panel-page-content-open.ui-panel-page-content-position-right.ui-panel-page-content-display-push {
+		margin-left: 17em;
+	}
+	.ui-panel-page-content-open.ui-panel-page-content-display-push {
+		width: auto;
+	}
+
+	.ui-panel-dismiss-display-push {
+		display: none;
+	}
+}
+

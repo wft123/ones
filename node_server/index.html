@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--
+ *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
+ *
+ *  Use of this source code is governed by a BSD-style license
+ *  that can be found in the LICENSE file in the root of the source
+ *  tree.
+-->
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="WebRTC code samples">
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+	<meta itemprop="description" content="Client-side WebRTC code samples">
+	<meta itemprop="image" content="images/webrtc-icon-192x192.png">
+	<meta itemprop="name" content="WebRTC code samples">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta id="theme-color" name="theme-color" content="#ffffff">
+
+	<base target="_blank">
+
+	<title>Hi</title>
+
+	<link rel="icon" sizes="192x192" href="images/webrtc-icon-192x192.png">
+	<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+	<div id="container">
+		<table>
+			<tr>
+				<td>
+					<button id="startBtn">Start</button>
+					<button id="hangUpBtn">Hang Up</button>
+				</td>
+				<td style="background-color: black"><!--구분선--></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td style="background-color: black"><!--구분선--></td>
+				<td style="background-color: black"><!--구분선--></td>
+				<td style="background-color: black"><!--구분선--></td>
+			</tr>
+			<tr>
+				<td align="center">Local</td>
+				<td style="background-color: black"><!--구분선--></td>
+				<td align="center">Remote</td>
+			</tr>
+			<tr>
+				<td style="background-color: black"><!--구분선--></td>
+				<td style="background-color: black"><!--구분선--></td>
+				<td style="background-color: black"><!--구분선--></td>
+			</tr>
+			<tr>
+				<td><video id="localVideo" autoplay muted></video></td>
+				<td style="background-color: black"><!--구분선--></td>
+				<td><video id="remoteVideo" autoplay></video></td>
+			</tr>
+			<tr>
+				<td>
+					<button id="localUnmuteBtn">L.Unmute</button>
+					<button id="localUnblankBtn">L.Unblank</button>
+				</td>
+				<td style="background-color: black"><!--구분선--></td>
+				<td>
+					<button id="remoteUnmuteBtn">R.Unmute</button>
+					<button id="remoteUnblankBtn">R.Unblank</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="localMuteBtn">L.Mute</button>
+					<button id="localBlankBtn">L.Blank</button>
+				</td>
+				<td style="background-color: black"><!--구분선--></td>
+				<td>
+					<button id="remoteMuteBtn">R.Mute</button>
+					<button id="remoteBlankBtn">R.Blank</button>
+				</td>
+			</tr>
+			<tr>
+				<td style="background-color: black"><!--구분선--></td>
+				<td style="background-color: black"><!--구분선--></td>
+				<td style="background-color: black"><!--구분선--></td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="sendChatArea" disabled placeholder="Send Area"></textarea>
+				</td>
+				<td style="background-color: black"><!--구분선--></td>
+				<td>
+					<textarea id="receivedChatArea" disabled></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="sendChatBtn">Send</button>
+					<button id="clearChatBtn">Clear</button>
+				</td>
+				<td style="background-color: black"><!--구분선--></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td style="background-color: black"><!--구분선--></td>
+				<td style="background-color: black"><!--구분선--></td>
+				<td style="background-color: black"><!--구분선--></td>
+			</tr>
+			<tr>
+				<td>
+					<form id="sendFileInfo">
+						<input type="file" id="sendFileInput" name="files">
+					</form>
+				</td>
+				<td style="background-color: black"><!--구분선--></td>
+				<td><a id="download"></a></td>
+			</tr>
+			<tr>
+				<td><button id="sendFileBtn">Send</button></td>
+				<td style="background-color: black"><!--구분선--></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>
+					<div class="progress">
+						<div>Send progress:</div>
+						<progress id="sendProgress" max="0" value="0"></progress>
+					</div>
+					<div id="bitrate"></div>
+				</td>
+				<td style="background-color: black"><!--구분선--></td>
+				<td>
+					<div class="progress">
+						<div class="label">Receive progress:</div>
+						<progress id="receiveProgress" max="0" value="0"></progress>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span id="status"></span>
+				</td>
+				<td style="background-color: black"><!--구분선--></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+	<script src="js/lib/adapter.js"></script>
+	<!--<script src="js/lib/common.js"></script>-->
+	<!--<script src="js/lib/ga.js"></script>-->
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/main2.js"></script>
+</body>
+</html>

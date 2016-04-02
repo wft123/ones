@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+ <data>
+  <employeeId>admin</employeeId>
+  <password>admin</password>
+  <name>관리자</name>
+ </data>
+ <data>
+  <employeeId>20160420</employeeId>
+  <password>20160420</password>
+  <name>김철수</name>
+ </data>
+ <data>
+  <employeeId>20160401</employeeId>
+  <password>20160401</password>
+  <name>이영희</name>
+ </data>
+</item> 

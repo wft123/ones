@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+@import "main.css";
+
+#menuPanel { display: none; }
+
+img { margin: 50px 0 30px 0; }
+
+#panel {
+	background: rgba(0,0,0,0.5);
+	color: white;
+	width: 40%;
+	margin: 0 auto;
+	padding: 20px;
+	 border-top-left-radius: 180px;
+    border-top-right-radius: 180px;
+    border-bottom-right-radius: 180px;
+    border-bottom-left-radius: 180px;
+}

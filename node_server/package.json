@@ -1,0 +1,26 @@
+{
+  "name": "codelab",
+  "version": "0.0.1",
+  "description": "WebRTC codelab",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/webrtc/codelab"
+  },
+  "keywords": [
+    "webrtc",
+    "codelab"
+  ],
+  "author": "webrtc",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^3.4.8",
+    "fs": "0.0.2",
+    "https": "^1.0.0",
+    "node-static": "~0.7.1",
+    "nodeos": "0.0.0",
+    "socket.io": "^1.4.5"
+  }
+}

@@ -1,0 +1,123 @@
+@CHARSET "UTF-8";
+@import "main.css";
+
+#menuPanel { display: none; }
+
+div#slider {
+    margin-left: 10px;
+}
+
+.bx-wrapper img{margin-top: -25px;}
+
+div#business {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 50%;
+    background: transparent;
+    margin-top: 30px;
+}
+
+div#business > div {
+    background-size: cover;
+    background-color: RGBA(25,171,140,0.5);
+    width: 40%;
+    height: 53%;
+    border: none;
+    position: relative;
+    margin: 2px;
+    border-top-left-radius: 180px;
+    border-top-right-radius: 180px;
+    border-bottom-right-radius: 180px;
+    border-bottom-left-radius: 180px;
+}
+div#business div:first-child {	background-image: url('../img/index/bank_white.png'); border-bottom-right-radius: 60px; }
+div#business div:nth-child(2) { background-image: url('../img/index/card_white.png'); border-bottom-left-radius: 60px; }
+div#business div:nth-child(3) { background-image: url('../img/index/capital_white.png'); border-top-right-radius: 60px; }
+div#business div:nth-child(4) { background-image: url('../img/index/stock_white.png'); border-top-left-radius: 60px; }
+
+div#business div div {
+	background-color: transparent;
+    border: none;
+    bottom: 18%;
+    position: absolute;
+    width: 100%;
+    color: white;
+    font-size: 18px;
+}
+
+div.detailMenu{
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width : 100%;
+    height: 50%;
+}
+
+div.detailMenu div{
+	width: 28%;
+	color: white;
+	background-size: cover;
+	background-color: RGBA(25,171,140,0.5);
+	padding-top: 20%;
+	margin: 4px;
+	border-top-left-radius: 180px;
+    border-top-right-radius: 180px;
+    border-bottom-right-radius: 180px;
+    border-bottom-left-radius: 180px;
+    font-size: 14px;
+}
+
+div#notify {
+	color: white !important;
+	font-size: 15px;
+	text-align: left;
+}
+
+div.title {
+	font-size: 15px;
+}
+
+table.hana_service td {
+	width: 30%;
+	padding: 10px;
+}
+
+img.icon {
+	width: 100%;
+	height: auto;
+	max-width: 300px;
+}
+.serviceTitle{width:100%px;text-align:left;margin-bottom:8px;font-size:14px; }
+/* 이벤트 롤링 */
+.notiEvent {width:100%px;text-align:left;}
+.notiEvent .notiTitle {margin-bottom:8px;font-size:14px;}
+
+.eventList {overflow:hidden;height: 100px;}
+.eventList .rollingList {overflow:hidden;position:relative;text-align:left;font-size:16px;}
+.eventList .rollingList strong {display:inline-block;padding-top:5px;font-size:20px;letter-spacing:-0.1em;line-height:150%;cursor:pointer;}
+.eventList .rollingList strong:hover {text-decoration:underline;}
+.eventList .rollingNavi {position:absolute;z-index:9;top:0;right:0;}
+.eventList .rollingNavi a {display:block;margin-top:20px;}
+.eventList .rollingNavi a:first-child {margin-top:0px;}
+
+.eventList .bx-pager {display:none;}
+.eventList .bx-viewport {float:left; left:2px !important;width:245px !important; height:180px !important; margin-right:10px; padding-top:3px; font-size:16px;}
+.eventList .bx-controls {float:right; width:28px;}
+.eventList .bx-controls a {display:block; }
+
+a:link {text-decoration: none; color: #FFFFFF;}
+a:visited {text-decoration: none; color: #FFFFFF;}
+a:active {text-decoration: none; color: #FFFFFF;}
+a:hover {text-decoration: underline; color: #FFFFFF;}
+
+/* leaflet */
+.leafletWrapper {width:100%px;text-align:left;}
+.leafletWrapper .bx-viewport{float:left; left:2px !important;width:245px !important;margin-right:10px; padding-top:3px; font-size:16px;}
+.leafletWrapper img{width:100%; height:100%}
