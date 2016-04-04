@@ -156,9 +156,9 @@ function saveChat() {
 		var content = chatLogTemp[idx].firstChild.innerHTML;
 		var time = chatLogTemp[idx].lastChild.innerHTML;
 		var name = '';
-		if(chatLogTemp[idx].className==='mine'){
+		if(chatLogTemp[idx].className==='minewrap'){
 			name = clientId;
-		}else if(chatLogTemp[idx].className==='yours'){
+		}else if(chatLogTemp[idx].className==='yourswrap'){
 			var temp = content.split("</span>");
 			name = temp[0].substring(6);
 			content = temp[1];
