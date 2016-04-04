@@ -47,13 +47,14 @@ th { text-align: center; }
 		$(function(){
 			var socket = io.connect('https://${ip }:30000');
 			var $rooms = $('#rooms');
+			var categori;
 			
 			$(".content").css("height",$(window).height()-120);
 			
 			socket.emit('get clientList');
 			
 			socket.on('rooms', function(data){
-				var categori = $(".active").children("a").text();
+				categori = $(".active").children("a").text();
 				var html = '<tr>';
 				html += '<th>업무 내용</th>';
 				html += '<th>신청 시간</th>';
@@ -74,7 +75,7 @@ th { text-align: center; }
 			});
 			
 			socket.on('newClientJoin', function(data){
-				notifyMe(data);
+				if(categori==='All' || data.indexOf(categori)!=-1)		notifyMe(data);
 			});
 			
 			$(document).on("click", ".roomname",function(e){
