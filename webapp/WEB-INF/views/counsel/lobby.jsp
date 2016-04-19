@@ -39,10 +39,10 @@ th { text-align: center; }
 		<c:import url="/WEB-INF/views/includes/counsel-footer.jsp"/>
 	</div>
 	
-  	<script src="${pageContext.request.contextPath}/assets/js/notify.js"></script>
+    <script src="https://${ip }:30000/socket.io/socket.io.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/js/notify.js"></script>
   	<script src="${pageContext.request.contextPath}/assets/js/jquery-1.12.1.min.js"></script>
     <script src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://${ip }:30000/socket.io/socket.io.js"></script>
 	<script>
 		$(function(){
 			var socket = io.connect('https://${ip }:30000');
@@ -75,13 +75,24 @@ th { text-align: center; }
 			});
 			
 			socket.on('newClientJoin', function(data){
-				if(categori==='All' || data.indexOf(categori)!=-1)		notifyMe(data);
+				if(categori==='All' || data.indexOf(categori)!=-1){
+					var noti = notifyMe(data.room);
+					noti.onclick =function(event){
+						event.preventDefault();
+						pullClient(data.key);
+						this.close();
+					}
+				}
 			});
 			
-			$(document).on("click", ".roomname",function(e){
-				var url ="${pageContext.request.contextPath}/counsel/chat/?name=${authUser.name}&key="+e.target.parentElement.id.substring(2);
+			function pullClient(key){
+				var url ="${pageContext.request.contextPath}/counsel/chat/?name=${authUser.name}&key="+key.substring(2);
 				$(location).attr('href',url);
-				socket.emit('pull client',{id : e.target.parentElement.id}, function(){});
+				socket.emit('pull client',{id : key}, function(){});
+			}
+			
+			$(document).on("click", ".roomname",function(e){
+				pullClient(e.target.parentElement.id);
 			});
 			
 			$(document).on("click","#tabs > li", function(e){

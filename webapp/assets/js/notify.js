@@ -19,7 +19,7 @@ function notifyMe(title) {
 			}
 		});
 	}
-
+	return notification;
 	// At last, if the user has denied notifications, and you
 	// want to be respectful there is no need to bother them any more.
 } Notification.requestPermission().then(function(result) {

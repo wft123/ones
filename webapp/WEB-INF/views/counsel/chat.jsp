@@ -28,6 +28,11 @@
 				<li><div data-target="#layerpop" data-toggle="modal">파일전송</div></li>
 				<li><div id="camChat">영상전환</div></li>
 				<li><div id="saveBtn">대화내용저장</div></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li><div id="sVideo" style="display:none">상담원 영상 저장</div></li>
+				<li><div id="cVideo" style="display:none">고객 영상 저장</div></li>
 			</ul>
 		</div>
 		<!-- /Left SideBar -->
@@ -123,6 +128,9 @@
     			}
     		}
     	});
+    	
+    	$("#sVideo").click(function(){downRecordedStream('local');	});
+    	$("#cVideo").click(function(){downRecordedStream('remote');});
     	
     	var openVideo = function(){
     		$("#receivedChatArea").animate({width:'50%'}, "slow");

@@ -186,8 +186,8 @@ function saveVideo(){
 	stopRecording('local');
 	stopRecording('remote');
 	if(confirm("영상을 저장하시겠습니까?")){
-		downRecordedStream('local');
-		downRecordedStream('remote');
+		document.getElementById("sVideo").style.display="inherit";
+		document.getElementById("cVideo").style.display="inherit";
 	}
 }
 
