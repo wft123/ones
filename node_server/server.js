@@ -26,7 +26,7 @@ io.sockets.on('connection', function (socket) {
 		socket.time = data.time;
 		clients[socket.id] = socket;
 		updateWaiting();
-		io.sockets.emit('newClientJoin', socket.roomname);
+		io.sockets.emit('newClientJoin', {key:socket.id, room:socket.roomname});
 	});
 	
 	socket.on('send message', function(data){
